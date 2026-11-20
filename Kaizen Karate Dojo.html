@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kaizen Karate Dojo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7F4;--surface:#FFFFFF;--ink:#151B2E;--muted:#56607A;--line:#D9DCE3;--accent:#B3202A;--accent-ink:#FFFFFF;
+  --display:"Shippori Mincho B1","Hiragino Mincho ProN",Georgia,serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1424;--surface:#171E35;--ink:#EDEFF5;--muted:#A3ABC2;--line:#2A3250;--accent:#E5545E;--accent-ink:#0F1424;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0F1424;--surface:#171E35;--ink:#EDEFF5;--muted:#A3ABC2;--line:#2A3250;--accent:#E5545E;--accent-ink:#0F1424;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0}
+h2{font-size:clamp(1.7rem,5vw,2.3rem);font-weight:800;margin-bottom:.4em}
+p{margin:0 0 1em;max-width:60ch}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;max-width:960px;margin:0 auto}
+.brand{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none}
+nav{display:flex;gap:18px;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.hero{padding:40px 0 64px;position:relative}
+.kanji{font-family:var(--display);font-weight:800;font-size:clamp(6rem,30vw,12rem);line-height:.95;margin:0 0 12px;letter-spacing:.04em;display:flex;align-items:center;gap:.12em}
+.kanji i{display:inline-block;width:.42em;height:.42em;border-radius:50%;background:var(--accent);flex:none}
+.hero h1{font-size:clamp(2rem,7vw,3.4rem);font-weight:800;max-width:16ch;margin-bottom:.5em}
+.hero p{color:var(--muted);font-size:1.15rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-block;padding:14px 22px;border-radius:6px;font-weight:700;text-decoration:none;border:2px solid var(--ink)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.lead{color:var(--muted)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px}
+.card h3{font-size:1.3rem;margin-bottom:.3em}
+.card .age{color:var(--accent);font-weight:700;margin-bottom:.5em}
+.card p{margin:0;color:var(--muted)}
+.scroll{overflow-x:auto;margin-top:20px}
+table{border-collapse:collapse;width:100%;min-width:480px;background:var(--surface);border:1px solid var(--line)}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line)}
+th{font-weight:700;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+.belts{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:8px}
+.belts li{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:10px 14px;animation:grow .7s ease-out both}
+.belts li:nth-child(2){animation-delay:.08s}.belts li:nth-child(3){animation-delay:.16s}.belts li:nth-child(4){animation-delay:.24s}.belts li:nth-child(5){animation-delay:.32s}.belts li:nth-child(6){animation-delay:.4s}.belts li:nth-child(7){animation-delay:.48s}
+.belts .bar{flex:none;width:56px;height:14px;border-radius:2px;border:1px solid rgba(128,128,128,.45)}
+.belts b{min-width:6.5em}
+.belts span.t{color:var(--muted);margin-left:auto;font-size:.95rem;text-align:right}
+@keyframes grow{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.belts li{animation:none}html{scroll-behavior:auto}}
+.contact .btns{margin-top:18px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#top">Kaizen Karate Dojo</a>
+  <nav aria-label="Main">
+    <a href="#classes">Classes</a><a href="#schedule">Schedule</a><a href="#belts">Belts</a><a href="#join">Join</a>
+  </nav>
+</header>
+
+<main id="top">
+<div class="wrap hero">
+  <p class="kanji" aria-hidden="true">空手<i></i></p>
+  <h1>Learn karate. Build focus, strength and confidence.</h1>
+  <p>Friendly, structured classes for children, teens and adults. No experience needed. Your first class is free.</p>
+  <div class="btns">
+    <a class="btn main" href="#join">Book a free trial class</a>
+    <a class="btn" href="#schedule">See the schedule</a>
+  </div>
+</div>
+
+<section id="classes"><div class="wrap">
+  <h2>Classes for every age</h2>
+  <p class="lead">Each class starts with a warm-up, then technique, then partner practice. We train hard and treat each other with respect.</p>
+  <div class="grid">
+    <div class="card"><h3>Little Dragons</h3><p class="age">Ages 5 to 8</p><p>Balance, listening and basic moves through games. A gentle first step into martial arts.</p></div>
+    <div class="card"><h3>Youth</h3><p class="age">Ages 9 to 14</p><p>Kata, kihon and light sparring. Builds discipline, fitness and self-belief.</p></div>
+    <div class="card"><h3>Adults</h3><p class="age">Ages 15 and up</p><p>Technique, conditioning and self-defence. Train at your own pace, whatever your fitness.</p></div>
+  </div>
+</div></section>
+
+<section id="schedule"><div class="wrap">
+  <h2>Weekly schedule</h2>
+  <p class="lead">Sample times. Replace them with your own.</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Day</th><th>Time</th><th>Class</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td><td>5:00 – 6:00 pm</td><td>Little Dragons</td></tr>
+        <tr><td>Monday</td><td>6:15 – 7:30 pm</td><td>Adults</td></tr>
+        <tr><td>Wednesday</td><td>5:00 – 6:15 pm</td><td>Youth</td></tr>
+        <tr><td>Friday</td><td>5:00 – 6:00 pm</td><td>Little Dragons</td></tr>
+        <tr><td>Saturday</td><td>9:00 – 10:30 am</td><td>All ages</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<section id="belts"><div class="wrap">
+  <h2>The belt path</h2>
+  <p class="lead">You test for each belt when your instructor says you are ready. Times below are a rough guide.</p>
+  <ol class="belts">
+    <li><span class="bar" style="background:#F2F2F2"></span><b>White</b><span class="t">Start here</span></li>
+    <li><span class="bar" style="background:#F2C230"></span><b>Yellow</b><span class="t">About 3 months</span></li>
+    <li><span class="bar" style="background:#EE8A2B"></span><b>Orange</b><span class="t">About 6 months</span></li>
+    <li><span class="bar" style="background:#3F9B4B"></span><b>Green</b><span class="t">About 1 year</span></li>
+    <li><span class="bar" style="background:#2F6FD0"></span><b>Blue</b><span class="t">About 1.5 years</span></li>
+    <li><span class="bar" style="background:#7A4A2A"></span><b>Brown</b><span class="t">About 3 years</span></li>
+    <li><span class="bar" style="background:#111111"></span><b>Black</b><span class="t">4 years or more</span></li>
+  </ol>
+</div></section>
+
+<section id="join" class="contact"><div class="wrap">
+  <h2>Try a free class</h2>
+  <p>Wear loose, comfortable clothes and bring water. We will lend you everything else. Get in touch and we will find a class that fits.</p>
+  <p><strong>Dojo:</strong> 12 Example Street, Your Town<br><strong>Instructor:</strong> Sensei Name</p>
+  <div class="btns">
+    <a class="btn main" href="tel:+10000000000">Call 000 000 0000</a>
+    <a class="btn" href="https://wa.me/10000000000">Message on WhatsApp</a>
+    <a class="btn" href="mailto:hello@example.com">Send an email</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Kaizen Karate Dojo. Oss!</div></footer>
+</body>
+</html>
